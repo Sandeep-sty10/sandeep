@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandeep Shetty | Web Developer & Designer</title>
+    <base target="_self">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@preline/preline@2.0.0/dist/preline.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        html {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .experience-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="#" class="text-xl font-bold text-gray-900 dark:text-white flex items-center" onclick="handleNavClick(event)">
+                    <span class="bg-primary-500 text-white p-2 rounded-lg mr-2">SS</span>
+                    Sandeep Shetty
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors" onclick="handleNavClick(event)">About</a>
+                    <a href="#skills" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors" onclick="handleNavClick(event)">Skills</a>
+                    <a href="#experience" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors" onclick="handleNavClick(event)">Experience</a>
+                    <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors" onclick="handleNavClick(event)">Contact</a>
+                </div>
+                <button id="theme-toggle" class="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:inline"></i>
+                </button>
+                <button class="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden py-2 space-y-2">
+                <a href="#about" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg" onclick="handleNavClick(event)">About</a>
+                <a href="#skills" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg" onclick="handleNavClick(event)">Skills</a>
+                <a href="#experience" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg" onclick="handleNavClick(event)">Experience</a>
+                <a href="#contact" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg" onclick="handleNavClick(event)">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-gradient text-white py-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="md:w-1/2 mb-10 md:mb-0">
+                        <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="text-yellow-300">Sandeep Shetty</span></h1>
+                        <p class="text-xl mb-6">Passionate Web Developer & Designer with 6+ months of hands-on experience</p>
+                        <div class="flex space-x-4">
+                            <a href="#contact" class="bg-white text-primary-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors" onclick="handleNavClick(event)">Get In Touch</a>
+                            <a href="#about" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-primary-600 transition-colors" onclick="handleNavClick(event)">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <div class="w-64 h-64 bg-white/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user-tie text-8xl text-white/80"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white dark:bg-gray-900">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                        <div class="w-64 h-64 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden border-4 border-primary-500">
+                            <img src="sandeep-profile.jpg.jpeg">
+
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 md:pl-12">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Web Developer & Designer</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">
+                            I'm a passionate Web Developer and Designer with 6+ months of hands-on experience. I love turning ideas into reality using HTML, CSS, and JavaScript. Currently exploring Java, C++, and automation in Electronics & Communication Engineering while doing an internship at Winsun Global Tech.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-primary-500 mr-3"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Sakleshpura, Karnataka</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-primary-500 mr-3"></i>
+                                <span class="text-gray-700 dark:text-gray-300">sandeepshettyyt47@gmail.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-graduation-cap text-primary-500 mr-3"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Electronics & Communication Engineering</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-briefcase text-primary-500 mr-3"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Intern at Winsun Global Tech</span>
+                            </div>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-primary-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-primary-600 transition-colors flex items-center">
+                                <i class="fab fa-github mr-2"></i> GitHub
+                            </a>
+                            <a href="#" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center">
+                                <i class="fab fa-linkedin-in mr-2"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-gray-50 dark:bg-gray-800">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">My Skills</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Front-End Skills -->
+                    <div class="skill-card bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-code text-primary-500 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Front-End</h3>
+                        </div>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300">HTML5</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300">CSS3</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300">JavaScript</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Responsive Web Design</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Programming Skills -->
+                    <div class="skill-card bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-laptop-code text-blue-500 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Programming</h3>
+                        </div>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Java (basic for DSA)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300">C++ (beginner)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Python (in learning)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Tools & Technologies -->
+                    <div class="skill-card bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-tools text-purple-500 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Tools & Technologies</h3>
+                        </div>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Canva, Figma</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300">GitHub</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300">WordPress (basic)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 bg-white dark:bg-gray-900">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">My Experience</h2>
+                <div class="space-y-8">
+                    <!-- Current Internship -->
+                    <div class="experience-card bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-sm transition-all duration-300">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Intern at Winsun Global Tech Pvt. Ltd</h3>
+                            <span class="text-primary-500 font-medium">Current</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Gaining practical experience in web development and technology solutions.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm">Web Development</span>
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm">Technology Solutions</span>
+                        </div>
+                    </div>
+
+                    <!-- Freelance Experience -->
+                    <div class="experience-card bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-sm transition-all duration-300">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Freelance Web Developer & Designer</h3>
+                            <span class="text-gray-500 dark:text-gray-400 font-medium">6 months</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Worked on various web projects, creating responsive and user-friendly interfaces.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm">HTML/CSS</span>
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm">JavaScript</span>
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded-full text-sm">Responsive Design</span>
+                        </div>
+                    </div>
+
+                    <!-- Previous Jobs -->
+                    <div class="experience-card bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-sm transition-all duration-300">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Operations at Shadowfax Courier</h3>
+                            <span class="text-gray-500 dark:text-gray-400 font-medium">6 months</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Gained experience in logistics and operations management.</p>
+                    </div>
+
+                    <div class="experience-card bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-sm transition-all duration-300">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">eCart Delivery (Sakleshpura)</h3>
+                            <span class="text-gray-500 dark:text-gray-400 font-medium">3 months</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Worked in local delivery services, understanding customer needs and logistics.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Get In Touch</h2>
+                <div class="flex flex-col md:flex-row gap-12">
+                    <div class="md:w-1/2">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800 dark:text-white">Contact Information</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">Feel free to reach out to me for any questions or opportunities!</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-envelope text-primary-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 dark:text-white">Email</h4>
+                                    <a href="mailto:sandeepshettyyt47@gmail.com" class="text-primary-500 hover:underline" onclick="handleEmailClick(event)">sandeepshettyyt47@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt text-primary-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 dark:text-white">Location</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">Sakleshpura, Karnataka, India</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-medium text-gray-800 dark:text-white mb-4">Connect with me</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary-500 hover:text-white transition-colors">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-800 hover:text-white transition-colors">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <form class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md">
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 dark:text-gray-300 mb-2">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white">
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="block text-gray-700 dark:text-gray-300 mb-2">Subject</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white">
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-white"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-600 transition-colors">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="text-xl font-bold text-white flex items-center" onclick="handleNavClick(event)">
+                        <span class="bg-primary-500 text-white p-2 rounded-lg mr-2">SS</span>
+                        Sandeep Shetty
+                    </a>
+                </div>
+                <div class="text-gray-400 text-sm">
+                    &copy; 2025 Sandeep Shetty. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Handle navigation clicks
+        function handleNavClick(event) {
+            event.preventDefault();
+            const targetId = event.currentTarget.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Handle email clicks
+        function handleEmailClick(event) {
+            event.preventDefault();
+            const email = event.currentTarget.getAttribute('href').replace('mailto:', '');
+            window.location.href = `mailto:${email}`;
+        }
+
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Theme toggle
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // Form submission
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
